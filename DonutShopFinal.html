@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>The Donut Shop Simulator</title>
+
+		<link type="text/css" rel="stylesheet" href="donutstylesheet.css"/>
+	
+
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="donut.js">
+			</script>
+
+	</head>
+
+		<body>
+
+			<div class="back"></div>
+			<div id="header"><h1>Andrew's Page of Donuts!</h1><h3>The donut shop simulator</h3></div>
+			<div id="left"><br><br><br><br><br><br><br><p>Welcome to Andrew's donut shop simulator. In the textbox to right, enter how many hours the shop is open for today. After determing the hours, click on which donut shop you would like to simulate. For each hour the donut shop is open, the program uses information from the table below to determine how many donuts should be made. The program takes a random number of customers within the minimum and maximum ranges predetermined for each of the different donut shops in the table. It then multiplies this number by the average number of donuts per customer. This is done x amount of times and gives the user a total estimate of how many donuts should be made for the entire day and also gives an average of how many donuts per hour the shop will need.</p>	
+				<table>
+					<tr>
+						<th>Location</th><th>Min Cust</th><th>Max Cust</th><th>Avg Donuts</th>
+					</tr>
+					<tr>
+						<td>Capitol Hill</td><td id="chMin">4</td><td id="chMax">37</td><td id="chAvg">2</td>
+					</tr>
+					<tr>
+						<td>South Lake Union</td><td id="slMin">9</td><td id="slMax">23</td><td id="slAvg">6.33</td>
+					</tr>
+					<tr>
+						<td>Wedgewood</td><td id="wwMin">2</td><td id="wwMax">28</td><td id="wwAvg">1.25</td>
+					</tr>
+					<tr>
+						<td>Ballard</td><td id="bMin">8</td><td id="bMax">58</td><td id="bAvg">3.75</td>
+					</tr>
+					<tr>
+						<td>Downtown</td><td id="dtMin">8</td><td id="dtMax">43</td><td>4.5</td>
+					</tr>
+				</table>
+
+			</div>
+
+			<div id="footer">Andrew's Donuts &copy 2016 All rights reserved</div>
+
+			<div id="hiddenMenu"><br><br>></div>
+			<div id="hiddenMenu2"></div>
+
+			<div id="right">
+				<form>
+					<input display= "inline-block" type="textarea" id="hours" placeholder="Please Enter # of Hours Open" rows="2" cols="20" name="nHoursInput">
+				
+					<ul >
+						<li>
+							<input style="height:30px;width:100px" display= "inline-block" value="Downtown" type="button" onClick="shopSelect(downTown);" ></li>
+						<li>
+							<input style="height:30px;width:100px" display= "inline-block" value="Capitol Hill" type="button" onClick="shopSelect(capitolHill);"></li>
+						<li>
+							<input style="height:30px;width:100px" display= "inline-block" value="South Lake Union" type="button" onClick="shopSelect(southLakeUnion);"></li>
+						<li>
+							<input style="height:30px;width:100px" display= "inline-block" class="shopSelectButton" value="Wedgewood" type="button" onClick="shopSelect(wedgewood);"></li>
+						<li>
+							<input style="height:30px;width:100px" display= "inline-block" class="shopSelectButton" value="Ballard" type="button" onClick="shopSelect(ballard);"></li>
+					</ul>
+				</form>
+			</div>
+			
+			<div id="total">
+				<h3> TOTAL DONUTS NEEDED TODAY</h3>
+				<h3 id="totalDonuts">25</h3>
+				<h3> AVG DONUTS PER HOUR</h3>
+				<h3 id="avgDonuts">2</h3>
+			</div>
+
+
+<script>
+	$("#total").hide();
+	</script>
+		</body>
+</html>
